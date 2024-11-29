@@ -1,0 +1,6 @@
+Makefile
+subversion_log.txt
+uqchessclient.c
+uqchessserver.c
+.revision
+.username

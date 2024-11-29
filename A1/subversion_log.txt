@@ -1,0 +1,1361 @@
+URL to view log online:
+https://source.eait.uq.edu.au/viewvc/s4834848/trunk/a1/?view=log
+
+Retrieving logs at Wed Aug 21 21:13:41 AEST 2024
+------------------------------------------------------------------------
+r1 | uqpsutto@uq.edu.au | 2024-07-31 11:55:30 +1000 (Wed, 31 Jul 2024) | 1 line
+Changed paths:
+   A /play
+   A /prac
+   A /trunk
+   A /trunk/a1
+   A /trunk/a3
+   A /trunk/a4
+
+Initial repository structure
+
+
+------------------------------------------------------------------------
+r2 | s4834848@uq.edu.au | 2024-08-02 11:19:01 +1000 (Fri, 02 Aug 2024) | 1 line
+Changed paths:
+   A /trunk/a1/uqentropy.c
+   A /trunk/a1/uqentropy.h
+
+Initial commit
+
+Index: uqentropy.c
+ uqentropy.c |   11 +++++++++++
+ 1 file changed, 11 insertions(+)
+Index: uqentropy.h
+ uqentropy.h |   11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+------------------------------------------------------------------------
+r3 | s4834848@uq.edu.au | 2024-08-02 13:27:32 +1000 (Fri, 02 Aug 2024) | 1 line
+Changed paths:
+   A /trunk/a1/Makefile
+
+Add Makefile
+
+Index: Makefile
+ Makefile |    9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+------------------------------------------------------------------------
+r4 | s4834848@uq.edu.au | 2024-08-02 18:05:13 +1000 (Fri, 02 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add functionality to calculate set size S of password using calc_set_size() and get_sets()
+
+
+Index: uqentropy.c
+ uqentropy.c |   54 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+Index: uqentropy.h
+ uqentropy.h |   17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+------------------------------------------------------------------------
+r5 | s4834848@uq.edu.au | 2024-08-02 18:11:40 +1000 (Fri, 02 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/Makefile
+   M /trunk/a1/uqentropy.h
+
+Fixed missing "$^" in make file. Changed CharacterSet values from binary to decimal
+
+
+Index: Makefile
+ Makefile |    9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+------------------------------------------------------------------------
+r6 | s4834848@uq.edu.au | 2024-08-02 18:15:10 +1000 (Fri, 02 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Added "Written" to welcome message
+
+
+Index: uqentropy.c
+ uqentropy.c |    7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r7 | s4834848@uq.edu.au | 2024-08-02 19:05:23 +1000 (Fri, 02 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add calc_entropy_log() function to calculate entropy of password using logarithmic formula
+
+
+Index: uqentropy.c
+ uqentropy.c |   53 +++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 51 insertions(+), 2 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    1 +
+ 1 file changed, 1 insertion(+)
+
+------------------------------------------------------------------------
+r8 | s4834848@uq.edu.au | 2024-08-02 19:24:37 +1000 (Fri, 02 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Modify calc_entropy_log to correctly round down to nearest 1 decimal place
+
+
+Index: uqentropy.c
+ uqentropy.c |    8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r9 | s4834848@uq.edu.au | 2024-08-02 19:43:09 +1000 (Fri, 02 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add print_password_strength() to print the strength of a given password based off its entropy
+
+
+Index: uqentropy.c
+ uqentropy.c |   22 ++++++++++++++++++++--
+ 1 file changed, 20 insertions(+), 2 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |   12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r10 | s4834848@uq.edu.au | 2024-08-02 20:27:11 +1000 (Fri, 02 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add get_password_from_user() to create a Password object from user input
+
+
+Index: uqentropy.c
+ uqentropy.c |   79 +++++++++++++++++++++++++++++++++++++++++++++---------------
+ 1 file changed, 60 insertions(+), 19 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    1 +
+ 1 file changed, 1 insertion(+)
+
+------------------------------------------------------------------------
+r11 | s4834848@uq.edu.au | 2024-08-02 22:15:15 +1000 (Fri, 02 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add get_cmdline_file_count() to get the number of files passed by the user to the program
+
+
+Index: uqentropy.c
+ uqentropy.c |   28 ++++++++++++++++++++++++++--
+ 1 file changed, 26 insertions(+), 2 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r12 | s4834848@uq.edu.au | 2024-08-03 11:42:11 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add helper functions for verify_cmdline_arguments() to split up functionality
+
+
+Index: uqentropy.c
+ uqentropy.c |  132 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 128 insertions(+), 4 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    3 +++
+ 1 file changed, 3 insertions(+)
+
+------------------------------------------------------------------------
+r13 | s4834848@uq.edu.au | 2024-08-03 12:21:53 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add arg_duplicated() to check if a command line argument is duplicated when verifying arguments.
+
+
+Index: uqentropy.c
+ uqentropy.c |   38 ++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 38 insertions(+)
+Index: uqentropy.h
+ uqentropy.h |    1 +
+ 1 file changed, 1 insertion(+)
+
+------------------------------------------------------------------------
+r14 | s4834848@uq.edu.au | 2024-08-03 12:43:08 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Fix definition of non alphanumeric set size (ASCII_OTHER_SET_SIZE) to 32
+
+
+Index: uqentropy.c
+ uqentropy.c |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r15 | s4834848@uq.edu.au | 2024-08-03 13:06:00 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Modify calc_set_size() to use bitmask to extract each character set present in a given CharacterSet value
+
+
+Index: uqentropy.c
+ uqentropy.c |   29 ++++++++++++-----------------
+ 1 file changed, 12 insertions(+), 17 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+------------------------------------------------------------------------
+r16 | s4834848@uq.edu.au | 2024-08-03 13:09:57 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add printf statement to main to print usage in case of invalid arguments.
+
+
+Index: uqentropy.c
+ uqentropy.c |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r17 | s4834848@uq.edu.au | 2024-08-03 13:31:08 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix exit status of main in case of invalid arguments to 18.
+
+
+Index: uqentropy.c
+ uqentropy.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r18 | s4834848@uq.edu.au | 2024-08-03 14:20:14 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add if statement in verify_cmdline_args() to check for empty string in arguments.
+
+
+Index: uqentropy.c
+ uqentropy.c |   11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r19 | s4834848@uq.edu.au | 2024-08-03 15:37:02 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Fix end index of for loop in cmdline_options_present().
+
+
+Index: uqentropy.c
+ uqentropy.c |   65 ++++++++++++++++++++++++++++++++++--------------------------
+ 1 file changed, 37 insertions(+), 28 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r20 | s4834848@uq.edu.au | 2024-08-03 16:07:55 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Simplify get_file_count() function, fix missing break statement in cmdline_file_start()
+
+
+Index: uqentropy.c
+ uqentropy.c |   22 +++++++++-------------
+ 1 file changed, 9 insertions(+), 13 deletions(-)
+
+------------------------------------------------------------------------
+r21 | s4834848@uq.edu.au | 2024-08-03 16:21:08 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix missing num_args_checked++ in arg_duplicated() function.
+
+
+Index: uqentropy.c
+ uqentropy.c |    5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r22 | s4834848@uq.edu.au | 2024-08-03 16:52:07 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add functionality to get_sets() to handle case of non-printable ASCII characters. Will return EMPTY_SET if this is the case.
+
+
+Index: uqentropy.c
+ uqentropy.c |   32 ++++++++++++++++++++++++--------
+ 1 file changed, 24 insertions(+), 8 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    5 +++++
+ 1 file changed, 5 insertions(+)
+
+------------------------------------------------------------------------
+r23 | s4834848@uq.edu.au | 2024-08-03 16:55:55 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add functionality to get_sets() to check for white space in password. Will return EMPTY_SET if this is the case.
+
+
+Index: uqentropy.c
+ uqentropy.c |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r24 | s4834848@uq.edu.au | 2024-08-03 17:04:05 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add check to verify_cmdline_args() to return true if no arguments were given.
+
+
+Index: uqentropy.c
+ uqentropy.c |    5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r25 | s4834848@uq.edu.au | 2024-08-03 17:06:47 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add printf() statement to while loop in main to continually ask user for new password.
+
+
+Index: uqentropy.c
+ uqentropy.c |    1 +
+ 1 file changed, 1 insertion(+)
+
+------------------------------------------------------------------------
+r26 | s4834848@uq.edu.au | 2024-08-03 17:14:18 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Modify get_cmdline_file_start() to accept files that begin with '-' but not '--'.
+
+
+Index: uqentropy.c
+ uqentropy.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r27 | s4834848@uq.edu.au | 2024-08-03 17:19:22 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Modify arg_duplicated() to only check the option arguments for duplication and ignore file names.
+
+
+Index: uqentropy.c
+ uqentropy.c |   12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r28 | s4834848@uq.edu.au | 2024-08-03 17:22:07 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix main to print usage string to stderr rather than stdout.
+
+
+Index: uqentropy.c
+ uqentropy.c |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r29 | s4834848@uq.edu.au | 2024-08-03 17:41:15 +1000 (Sat, 03 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add function check_cmdline_file() to check if a given file can be opened for reading.
+
+
+Index: uqentropy.c
+ uqentropy.c |   23 +++++++++++++++++++++--
+ 1 file changed, 21 insertions(+), 2 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    1 +
+ 1 file changed, 1 insertion(+)
+
+------------------------------------------------------------------------
+r30 | s4834848@uq.edu.au | 2024-08-04 10:38:22 +1000 (Sun, 04 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Modify get_cmdline_file_start() to work with files whose names are numbers e.g. a file called '5' etc.
+
+
+Index: uqentropy.c
+ uqentropy.c |   36 ++++++++++++++++++++++++++++++------
+ 1 file changed, 30 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r31 | s4834848@uq.edu.au | 2024-08-04 11:57:16 +1000 (Sun, 04 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add parse_cmdline_files() function to parse file names given through command line into array of file names.
+
+
+Index: uqentropy.c
+ uqentropy.c |   42 +++++++++++++++++++++++++++++++++---------
+ 1 file changed, 33 insertions(+), 9 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r32 | s4834848@uq.edu.au | 2024-08-04 12:07:39 +1000 (Sun, 04 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Modify parse_cmdline_files() to return a pointer to FileList struct rather than array of names.
+
+
+Index: uqentropy.c
+ uqentropy.c |   15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    5 +++++
+ 1 file changed, 5 insertions(+)
+
+------------------------------------------------------------------------
+r33 | s4834848@uq.edu.au | 2024-08-04 12:22:23 +1000 (Sun, 04 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add function check_all_cmdline_files() to check that all command line files can be opened for reading.
+
+
+Index: uqentropy.c
+ uqentropy.c |   25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+------------------------------------------------------------------------
+r34 | s4834848@uq.edu.au | 2024-08-04 13:00:32 +1000 (Sun, 04 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Move line reading functionality from get_user_password() into separate function read_line().
+
+
+Index: uqentropy.c
+ uqentropy.c |   50 +++++++++++++++++++++++++++++++-------------------
+ 1 file changed, 31 insertions(+), 19 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r35 | s4834848@uq.edu.au | 2024-08-04 14:19:01 +1000 (Sun, 04 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add function verify_file_contents() to check if a password file contains any invalid passwords. Add helper functions contains_whitespace() and contains_non_printable() for checking invalid passwords.
+
+
+Index: uqentropy.c
+ uqentropy.c |   81 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 79 insertions(+), 2 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    3 +++
+ 1 file changed, 3 insertions(+)
+
+------------------------------------------------------------------------
+r36 | s4834848@uq.edu.au | 2024-08-04 18:44:37 +1000 (Sun, 04 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add parse_passwords() function to parse passwords from a file into a PasswordList. Add helper function split_line() to assist in parsing passwords.
+
+
+Index: uqentropy.c
+ uqentropy.c |   88 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 81 insertions(+), 7 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r37 | s4834848@uq.edu.au | 2024-08-04 20:34:05 +1000 (Sun, 04 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Remove FileList struct, modify check_access_cmdline_files() and check_cmdline_files_contents() to take char** and size parameter instead of FileList.
+
+
+Index: uqentropy.c
+ uqentropy.c |  154 ++++++++++++++++++++++++++++--------------------------------
+ 1 file changed, 72 insertions(+), 82 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r38 | s4834848@uq.edu.au | 2024-08-05 11:22:59 +1000 (Mon, 05 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add struct PasswordSet to store array of PasswordList's when reading in files. Add function read_in_passwords() to read in password from all files into PasswordSet. Add source_file attribute to PasswordList struct.
+
+
+Index: uqentropy.c
+ uqentropy.c |   61 +++++++++++++++++++++++++++++++++++++++++++++++-------------
+ 1 file changed, 48 insertions(+), 13 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |   12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+------------------------------------------------------------------------
+r39 | s4834848@uq.edu.au | 2024-08-05 11:26:26 +1000 (Mon, 05 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add simple print_welcome() function to remove excess printf statements from main().
+
+
+Index: uqentropy.c
+ uqentropy.c |   10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    2 ++
+ 1 file changed, 2 insertions(+)
+
+------------------------------------------------------------------------
+r40 | s4834848@uq.edu.au | 2024-08-05 11:37:32 +1000 (Mon, 05 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix segfault in check_access_cmdline_files by making sure to only call fclose if given FILE* is not NULL.
+
+
+Index: uqentropy.c
+ uqentropy.c |   55 +++++++------------------------------------------------
+ 1 file changed, 7 insertions(+), 48 deletions(-)
+
+------------------------------------------------------------------------
+r41 | s4834848@uq.edu.au | 2024-08-05 13:02:38 +1000 (Mon, 05 Aug 2024) | 5 lines
+Changed paths:
+   M /trunk/a1/uqentropy.h
+
+Remove unused FileStatus enum.
+--Thisline, and those below, will be ignored--
+
+M    a1/uqentropy.h
+
+
+Index: uqentropy.h
+ uqentropy.h |    6 ------
+ 1 file changed, 6 deletions(-)
+
+------------------------------------------------------------------------
+r42 | s4834848@uq.edu.au | 2024-08-06 19:03:05 +1000 (Tue, 06 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add function verify_set_contents() to verify the passwords within a given PasswordSet are all valid. Add helper functions verify_list_contents() to verify passwords of a PasswordList and any_valid_passwords(). 
+
+
+Index: uqentropy.c
+ uqentropy.c |   45 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
+Index: uqentropy.h
+ uqentropy.h |    3 +++
+ 1 file changed, 3 insertions(+)
+
+------------------------------------------------------------------------
+r43 | s4834848@uq.edu.au | 2024-08-06 19:27:11 +1000 (Tue, 06 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add function comments for list and set content verifying functions.
+
+
+Index: uqentropy.c
+ uqentropy.c |   32 ++++++++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
+
+------------------------------------------------------------------------
+r44 | s4834848@uq.edu.au | 2024-08-07 10:10:56 +1000 (Wed, 07 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Simplify algorithim used for searching for match with casecheck using strcasecmp(). Add function search_for_match() to search a PasswordSet for a match with a candidate for the differnet options (casecheck, doubleup etc).
+
+
+Index: uqentropy.c
+ uqentropy.c |   38 ++++++++++++++++++++++++++++----------
+ 1 file changed, 28 insertions(+), 10 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |   13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+------------------------------------------------------------------------
+r45 | s4834848@uq.edu.au | 2024-08-07 16:42:46 +1000 (Wed, 07 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   M /trunk/a1/uqentropy.h
+
+Add function check_leet() to handle case of LEET SearchOption in search_for_match(). Add helper function for check_leet(), swap_char_leet() to give the possible leetspeak substitutes of a given character.
+
+
+Index: uqentropy.c
+ uqentropy.c |  118 +++++++++++++++++++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 102 insertions(+), 16 deletions(-)
+Index: uqentropy.h
+ uqentropy.h |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r46 | s4834848@uq.edu.au | 2024-08-07 18:11:37 +1000 (Wed, 07 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/Makefile
+   M /trunk/a1/uqentropy.c
+
+Remove uqentropy.h and move contents to uqentropy.c and update Makefile accordingly. Add comments to all structs, enums and functions.
+
+
+Index: Makefile
+ Makefile |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Index: uqentropy.c
+ uqentropy.c |  836 ++++++++++++++++++++++++++++++++----------------------------
+ 1 file changed, 459 insertions(+), 377 deletions(-)
+
+------------------------------------------------------------------------
+r47 | s4834848@uq.edu.au | 2024-08-07 19:05:07 +1000 (Wed, 07 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add function check_dig_append() to handle case in search_for_match for when search option is DIG_APPEND.
+
+
+Index: uqentropy.c
+ uqentropy.c |   34 ++++++++++++++++++++++++++++++++--
+ 1 file changed, 32 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r48 | s4834848@uq.edu.au | 2024-08-07 19:31:14 +1000 (Wed, 07 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add function check_double_up() to handle the case of search option DOUBLEUP in search_for_match().
+
+
+Index: uqentropy.c
+ uqentropy.c |   26 ++++++++++++++++++++++++--
+ 1 file changed, 24 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r49 | s4834848@uq.edu.au | 2024-08-07 20:34:11 +1000 (Wed, 07 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add struct SearchDesciptor to store information of what to search base on command line options. Stores array of SearchOption's, number of options and the number of digits to append if '--digit-append' is given. Add function parse_commands() to return a SearchDescriptor based on command line options.
+
+
+Index: uqentropy.c
+ uqentropy.c |  182 ++++++++++++++++++++++++++++++++++++++----------------------
+ 1 file changed, 117 insertions(+), 65 deletions(-)
+
+------------------------------------------------------------------------
+r50 | s4834848@uq.edu.au | 2024-08-08 17:42:37 +1000 (Thu, 08 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add comments for check_digit_append() and check_double_up() functions.
+
+
+Index: uqentropy.c
+ uqentropy.c |   62 ++++++++++++++++++++++++++++++++++++++++++++----------------
+ 1 file changed, 46 insertions(+), 16 deletions(-)
+
+------------------------------------------------------------------------
+r51 | s4834848@uq.edu.au | 2024-08-09 22:32:34 +1000 (Fri, 09 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add correct algorithim to calculate the number of guess counts to add to candidate password for each search type (e.g. casecheck, double up etc). Add helper function alpha_count() to assist in calculating guess count for given password.
+
+
+Index: uqentropy.c
+ uqentropy.c |   41 ++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 36 insertions(+), 5 deletions(-)
+
+------------------------------------------------------------------------
+r52 | s4834848@uq.edu.au | 2024-08-09 22:39:32 +1000 (Fri, 09 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Modify verify_cmdline_args() to only loop through arguments before file name arguments begin.
+
+
+Index: uqentropy.c
+ uqentropy.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r53 | s4834848@uq.edu.au | 2024-08-10 10:14:30 +1000 (Sat, 10 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add comments to parse_options() and alpha_count() functions.
+
+
+Index: uqentropy.c
+ uqentropy.c |   22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+------------------------------------------------------------------------
+r54 | s4834848@uq.edu.au | 2024-08-10 10:30:23 +1000 (Sat, 10 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Change first element of SearchOption enum from NO_OPT to EXACT to use when searching for an exact match to a password (default search).
+
+
+Index: uqentropy.c
+ uqentropy.c |   18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+------------------------------------------------------------------------
+r55 | s4834848@uq.edu.au | 2024-08-10 11:27:03 +1000 (Sat, 10 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix null terminator not being placed in correct index in read_line() function.
+
+
+Index: uqentropy.c
+ uqentropy.c |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+------------------------------------------------------------------------
+r56 | s4834848@uq.edu.au | 2024-08-10 12:05:48 +1000 (Sat, 10 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Reorganise structure of main(). Make SearchOption types enumerated 0,1,2,3... rather than powers of 2.
+
+
+Index: uqentropy.c
+ uqentropy.c |   42 +++++++++++++++++++-----------------------
+ 1 file changed, 19 insertions(+), 23 deletions(-)
+
+------------------------------------------------------------------------
+r57 | s4834848@uq.edu.au | 2024-08-10 15:55:10 +1000 (Sat, 10 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix check_dig_append() to only try password from lists which do not end with a numerical character.
+
+
+Index: uqentropy.c
+ uqentropy.c |   77 ++++++++++++++++++++++++++++++++++--------------------------
+ 1 file changed, 44 insertions(+), 33 deletions(-)
+
+------------------------------------------------------------------------
+r58 | s4834848@uq.edu.au | 2024-08-10 17:24:47 +1000 (Sat, 10 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add function let_sub_count() to get the number of possible LeetSpeak substitutions for a given character (zero, one or two).
+
+
+Index: uqentropy.c
+ uqentropy.c |   35 +++++++++++++++++++++++++++++++++--
+ 1 file changed, 33 insertions(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r59 | s4834848@uq.edu.au | 2024-08-10 18:21:11 +1000 (Sat, 10 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add missing fclose() call in check_access_cmdline_files().
+
+
+Index: uqentropy.c
+ uqentropy.c |   29 ++++++++++++++++-------------
+ 1 file changed, 16 insertions(+), 13 deletions(-)
+
+------------------------------------------------------------------------
+r60 | s4834848@uq.edu.au | 2024-08-13 14:13:23 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Simplify algorithim for checking files. parse_passwords() will return NULL if the file couldn't be opened for reading. Add content_ok attribute to PasswordList struct to indicate whether the read list has any invalid password characters.
+
+
+Index: uqentropy.c
+ uqentropy.c |  252 ++++++++++++++++++++++--------------------------------------
+ 1 file changed, 94 insertions(+), 158 deletions(-)
+
+------------------------------------------------------------------------
+r61 | s4834848@uq.edu.au | 2024-08-13 14:32:52 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Modify welcome printf statement to exactly match specification.
+
+
+Index: uqentropy.c
+ uqentropy.c |   10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+------------------------------------------------------------------------
+r62 | s4834848@uq.edu.au | 2024-08-13 15:23:06 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix for loop bounds in verify_cmdline_args() to loop up to but not including the first file name.
+
+
+Index: uqentropy.c
+ uqentropy.c |   10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+------------------------------------------------------------------------
+r63 | s4834848@uq.edu.au | 2024-08-13 15:25:21 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix typo in error statement for un-readable file.
+
+
+Index: uqentropy.c
+ uqentropy.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r64 | s4834848@uq.edu.au | 2024-08-13 15:29:52 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add while loop to main to continually ask user for passwords.
+
+
+Index: uqentropy.c
+ uqentropy.c |   31 +++++++++++++++++--------------
+ 1 file changed, 17 insertions(+), 14 deletions(-)
+
+------------------------------------------------------------------------
+r65 | s4834848@uq.edu.au | 2024-08-13 17:53:44 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add check to read_line() to detect a CRTL-D from user when reading from stdin. Fix invalid password message printing to stdout instead of stderr
+
+
+Index: uqentropy.c
+ uqentropy.c |   39 +++++++++++++++++++++++++++++++--------
+ 1 file changed, 31 insertions(+), 8 deletions(-)
+
+------------------------------------------------------------------------
+r66 | s4834848@uq.edu.au | 2024-08-13 18:04:41 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Move exit statements outside of while loop in main().
+
+
+Index: uqentropy.c
+ uqentropy.c |   12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+
+------------------------------------------------------------------------
+r67 | s4834848@uq.edu.au | 2024-08-13 19:07:11 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add +1 when calculating guess_count for password for digit append to include the guess of the numer '0'
+
+
+Index: uqentropy.c
+ uqentropy.c |   21 +++++++--------------
+ 1 file changed, 7 insertions(+), 14 deletions(-)
+
+------------------------------------------------------------------------
+r68 | s4834848@uq.edu.au | 2024-08-13 19:33:47 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add extra for loop to check_dig_append() to loop through up to digit_count. i.e. for appending two digits first try appending 1 digit, then 2 digits etc.
+
+
+Index: uqentropy.c
+ uqentropy.c |   20 +++++++++++---------
+ 1 file changed, 11 insertions(+), 9 deletions(-)
+
+------------------------------------------------------------------------
+r69 | s4834848@uq.edu.au | 2024-08-13 20:09:21 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix amount of guesses added to candidate password when checking doubleup in check_double_up().
+
+
+Index: uqentropy.c
+ uqentropy.c |   10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+------------------------------------------------------------------------
+r70 | s4834848@uq.edu.au | 2024-08-13 21:26:36 +1000 (Tue, 13 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Simplify check_double_up() to use strtok() - if a given password in the list is contained within the candidate then we can search the list for the token.
+
+
+Index: uqentropy.c
+ uqentropy.c |   24 +++++++++++-------------
+ 1 file changed, 11 insertions(+), 13 deletions(-)
+
+------------------------------------------------------------------------
+r71 | s4834848@uq.edu.au | 2024-08-14 12:44:47 +1000 (Wed, 14 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Modify check_double_up() to use strstr() instead of strtok(). Will now search list to see if any entry is a substring of the candidate. If so it will search the list again to look for the other entry to concatenate to form candidate password.
+
+
+Index: uqentropy.c
+ uqentropy.c |  131 ++++++++++++++++++++++++++++++++++--------------------------
+ 1 file changed, 76 insertions(+), 55 deletions(-)
+
+------------------------------------------------------------------------
+r72 | s4834848@uq.edu.au | 2024-08-14 12:51:56 +1000 (Wed, 14 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Move password reading functionality from parse_passwords() into seperate helper function read_passwords_from_file().
+
+
+Index: uqentropy.c
+ uqentropy.c |   58 +++++++++++++++++++++++++++++++++++-----------------------
+ 1 file changed, 35 insertions(+), 23 deletions(-)
+
+------------------------------------------------------------------------
+r73 | s4834848@uq.edu.au | 2024-08-14 13:28:24 +1000 (Wed, 14 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix number of guess added to candidate guess count when checking for leet substitution. 
+
+
+Index: uqentropy.c
+ uqentropy.c |   16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r74 | s4834848@uq.edu.au | 2024-08-14 13:53:02 +1000 (Wed, 14 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix calc_entropy() to return the minimum of E_1 and E_2.
+
+
+Index: uqentropy.c
+ uqentropy.c |   29 ++++++++++++++++++++---------
+ 1 file changed, 20 insertions(+), 9 deletions(-)
+
+------------------------------------------------------------------------
+r75 | s4834848@uq.edu.au | 2024-08-14 15:37:34 +1000 (Wed, 14 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix check_dig_append() to skip over passwords which end in a digit.
+
+
+Index: uqentropy.c
+ uqentropy.c |    9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r76 | s4834848@uq.edu.au | 2024-08-14 17:24:21 +1000 (Wed, 14 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix incorrect array indexing when parsing options in parse_options().
+
+
+Index: uqentropy.c
+ uqentropy.c |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r77 | s4834848@uq.edu.au | 2024-08-14 19:52:39 +1000 (Wed, 14 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Modify code to conform to style guide.
+
+
+Index: uqentropy.c
+ uqentropy.c |  461 +++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 239 insertions(+), 222 deletions(-)
+
+------------------------------------------------------------------------
+r78 | s4834848@uq.edu.au | 2024-08-14 19:54:22 +1000 (Wed, 14 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Remove unnecessary check for file beginning with './' in parse_cmdline_files().
+
+
+Index: uqentropy.c
+ uqentropy.c |   10 ----------
+ 1 file changed, 10 deletions(-)
+
+------------------------------------------------------------------------
+r79 | s4834848@uq.edu.au | 2024-08-14 20:29:00 +1000 (Wed, 14 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Moved user password input handling from main() into separate function handle_user_input().
+
+
+Index: uqentropy.c
+ uqentropy.c |   49 +++++++++++++++++++++++++++++--------------------
+ 1 file changed, 29 insertions(+), 20 deletions(-)
+
+------------------------------------------------------------------------
+r80 | s4834848@uq.edu.au | 2024-08-14 20:33:02 +1000 (Wed, 14 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add description of constant definitions.
+
+
+Index: uqentropy.c
+ uqentropy.c |    7 +++++++
+ 1 file changed, 7 insertions(+)
+
+------------------------------------------------------------------------
+r81 | s4834848@uq.edu.au | 2024-08-15 11:00:57 +1000 (Thu, 15 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+   D /trunk/a1/uqentropy.h
+
+Fix if statement for case check to only bother checking a password in the list if it has at least one alphabetic character.
+
+
+Index: uqentropy.h (deleted)
+Index: uqentropy.c
+ uqentropy.c |   20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+------------------------------------------------------------------------
+r82 | s4834848@uq.edu.au | 2024-08-15 11:04:35 +1000 (Thu, 15 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix check_leet() to skip over passwords from list which contain no substitutable characters.
+
+
+Index: uqentropy.c
+ uqentropy.c |    5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r83 | s4834848@uq.edu.au | 2024-08-15 11:46:06 +1000 (Thu, 15 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix type of initialGuessNum variable in check_double_up() from int to long.
+
+
+Index: uqentropy.c
+ uqentropy.c |    3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+------------------------------------------------------------------------
+r84 | s4834848@uq.edu.au | 2024-08-15 16:27:31 +1000 (Thu, 15 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Modify Password struct to store guess count as unsigned long rather than int.
+
+
+Index: uqentropy.c
+ uqentropy.c |   13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
+
+------------------------------------------------------------------------
+r85 | s4834848@uq.edu.au | 2024-08-15 17:45:48 +1000 (Thu, 15 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add more in line comments to explain steps within functions. Add strdup() call in arg_duplicated() function to duplicate argv element.
+
+
+Index: uqentropy.c
+ uqentropy.c |   78 +++++++++++++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 56 insertions(+), 22 deletions(-)
+
+------------------------------------------------------------------------
+r86 | s4834848@uq.edu.au | 2024-08-16 13:34:15 +1000 (Fri, 16 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add in line comments to remaining function to explain steps.
+
+
+Index: uqentropy.c
+ uqentropy.c |   65 +++++++++++++++++++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 56 insertions(+), 9 deletions(-)
+
+------------------------------------------------------------------------
+r87 | s4834848@uq.edu.au | 2024-08-16 19:43:44 +1000 (Fri, 16 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add more in line comments. Fix memory leaks in main(), read_in_passwords(), parse_passwords() and read_line().
+
+
+Index: uqentropy.c
+ uqentropy.c |   99 +++++++++++++++++++++++++++++++-----------------------------
+ 1 file changed, 52 insertions(+), 47 deletions(-)
+
+------------------------------------------------------------------------
+r88 | s4834848@uq.edu.au | 2024-08-16 20:29:43 +1000 (Fri, 16 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix memory leak in read_in_passwords() by changing 'else if' to 'if' to prevent excess reallocation of list array.
+
+
+Index: uqentropy.c
+ uqentropy.c |   15 +++++++--------
+ 1 file changed, 7 insertions(+), 8 deletions(-)
+
+------------------------------------------------------------------------
+r89 | s4834848@uq.edu.au | 2024-08-16 20:43:27 +1000 (Fri, 16 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Modify count attribute name in PasswordList and PasswordSet structs from 'count' to 'passCount' and 'listCount' respectively.
+
+
+Index: uqentropy.c
+ uqentropy.c |   50 +++++++++++++++++++++++++-------------------------
+ 1 file changed, 25 insertions(+), 25 deletions(-)
+
+------------------------------------------------------------------------
+r90 | s4834848@uq.edu.au | 2024-08-19 11:25:41 +1000 (Mon, 19 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Add description for SearchDescriptor struct. Simplify functions get_cmdline_file_start() and verify_cmdline_args().
+
+
+Index: uqentropy.c
+ uqentropy.c |   55 ++++++++++++++++++++++++++++++-------------------------
+ 1 file changed, 30 insertions(+), 25 deletions(-)
+
+------------------------------------------------------------------------
+r91 | s4834848@uq.edu.au | 2024-08-19 11:33:25 +1000 (Mon, 19 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Reformat code with Clang format.
+
+
+Index: uqentropy.c
+ uqentropy.c |   11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r92 | s4834848@uq.edu.au | 2024-08-19 17:43:42 +1000 (Mon, 19 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Modify in line comments in some functions.
+
+
+Index: uqentropy.c
+ uqentropy.c |    6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r93 | s4834848@uq.edu.au | 2024-08-19 21:27:32 +1000 (Mon, 19 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/Makefile
+   M /trunk/a1/uqentropy.c
+
+Fix missing '-Wextra' flag for gcc in Makefile. Consequently fix uqentropy.c for warnings resulting from adding new flag.
+
+
+Index: Makefile
+ Makefile |    8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+Index: uqentropy.c
+ uqentropy.c |   19 +++++++++++++------
+ 1 file changed, 13 insertions(+), 6 deletions(-)
+
+------------------------------------------------------------------------
+r94 | s4834848@uq.edu.au | 2024-08-20 12:17:45 +1000 (Tue, 20 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Cast all return values of calls to malloc(), realloc() and calloc().
+
+
+Index: uqentropy.c
+ uqentropy.c |   39 ++++++++++++++++++++-------------------
+ 1 file changed, 20 insertions(+), 19 deletions(-)
+
+------------------------------------------------------------------------
+r95 | s4834848@uq.edu.au | 2024-08-20 17:52:00 +1000 (Tue, 20 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix incorrect amount being added to guess count in check_dig_append(), should be twice the number of passwords in the list rather than just '2'.
+
+
+Index: uqentropy.c
+ uqentropy.c |    7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+------------------------------------------------------------------------
+r96 | s4834848@uq.edu.au | 2024-08-20 18:09:40 +1000 (Tue, 20 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix order in which search options are parsed to comply with spec. 
+
+
+Index: uqentropy.c
+ uqentropy.c |   58 ++++++++++++++++++++++++++++++++++------------------------
+ 1 file changed, 34 insertions(+), 24 deletions(-)
+
+------------------------------------------------------------------------
+r97 | s4834848@uq.edu.au | 2024-08-21 10:59:16 +1000 (Wed, 21 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix number of guesses added to count when a match is found in check_double_up(). Add check to check_dig_append() to check if the digit section of candidate password contains alphabetic characters (should be skipped).
+
+
+Index: uqentropy.c
+ uqentropy.c |   38 ++++++++++++++++++++++++--------------
+ 1 file changed, 24 insertions(+), 14 deletions(-)
+
+------------------------------------------------------------------------
+r98 | s4834848@uq.edu.au | 2024-08-21 12:27:45 +1000 (Wed, 21 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Simplify implementation of check_double_up() to only search for a match to 'search' if the candidate password ends 'search'. 
+
+
+Index: uqentropy.c
+ uqentropy.c |   23 +++--------------------
+ 1 file changed, 3 insertions(+), 20 deletions(-)
+
+------------------------------------------------------------------------
+r99 | s4834848@uq.edu.au | 2024-08-21 17:27:47 +1000 (Wed, 21 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/Makefile
+   M /trunk/a1/uqentropy.c
+
+Fix check_double_up() to work with multiple PasswordList's (multiple input files) within the given set. Add helper function get_all_passwords() to help with converting multiple lists into one array to use in check_double_up(). Add 'Error' comments to applicable functions. 
+
+
+Index: Makefile
+ Makefile |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+Index: uqentropy.c
+ uqentropy.c |   83 +++++++++++++++++++++++++++++++++++++++++++++++-------------
+ 1 file changed, 66 insertions(+), 17 deletions(-)
+
+------------------------------------------------------------------------
+r100 | s4834848@uq.edu.au | 2024-08-21 17:31:51 +1000 (Wed, 21 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix style errors.
+
+
+Index: uqentropy.c
+ uqentropy.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r101 | s4834848@uq.edu.au | 2024-08-21 18:09:12 +1000 (Wed, 21 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix function description comments to use camel case for variable names. Add extra comments to check_double_up() to explain steps.
+
+
+Index: uqentropy.c
+ uqentropy.c |   64 ++++++++++++++++++++++++++++++++++++------------------------
+ 1 file changed, 39 insertions(+), 25 deletions(-)
+
+------------------------------------------------------------------------
+r102 | s4834848@uq.edu.au | 2024-08-21 21:01:19 +1000 (Wed, 21 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Fix incorrect casting when adding to guess count in check_double_up().
+
+
+Index: uqentropy.c
+ uqentropy.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+------------------------------------------------------------------------
+r103 | s4834848@uq.edu.au | 2024-08-21 21:13:21 +1000 (Wed, 21 Aug 2024) | 2 lines
+Changed paths:
+   M /trunk/a1/uqentropy.c
+
+Reformat code with clang-format.
+
+
+Index: uqentropy.c
+ uqentropy.c |    4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+------------------------------------------------------------------------
