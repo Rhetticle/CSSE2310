@@ -612,6 +612,7 @@ GameInfo* init_game_info(Parameters* param, int sockfd)
 
 int main(int argc, char** argv)
 {
+    char** stuff = split_by_char(argv[0], 'q', 0);
     Parameters* param = process_cmdline_args(argc, argv);
 
     // invalid commandline arguments

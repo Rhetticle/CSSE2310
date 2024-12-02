@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wextra -Wall -pedantic -std=gnu99
+CFLAGS=-Wall -Wextra -pedantic -std=gnu99
 
 LIBDIR=../lib
 INCDIR=../include
